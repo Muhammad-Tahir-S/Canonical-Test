@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/canonical-test/static/css/main.36419fe8.css",
+    "main.js": "/canonical-test/static/js/main.627ce5db.js",
+    "index.html": "/canonical-test/index.html",
+    "main.36419fe8.css.map": "/canonical-test/static/css/main.36419fe8.css.map",
+    "main.627ce5db.js.map": "/canonical-test/static/js/main.627ce5db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36419fe8.css",
+    "static/js/main.627ce5db.js"
+  ]
+}
