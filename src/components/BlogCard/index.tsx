@@ -1,7 +1,7 @@
 import React from "react";
-import { formatDate } from "../../helpers/date";
+import { formatDate } from "../../utils/date";
 
-interface ICard {
+export interface IBlogCard {
   headerText: string;
   imgSrc: string;
   title: string;
@@ -12,7 +12,7 @@ interface ICard {
   authorUrl: string;
 }
 
-const Card = ({
+const BlogCard = ({
   headerText,
   imgSrc,
   title,
@@ -21,7 +21,7 @@ const Card = ({
   footerText,
   blogUrl,
   authorUrl,
-}: ICard): JSX.Element => {
+}: IBlogCard): JSX.Element => {
   return (
     <div className="col-4">
       <div
@@ -40,38 +40,39 @@ const Card = ({
             {headerText}
           </h5>
         </header>
-        <a href={blogUrl} target={"_blank"} rel="noreferrer">
-          <img className="p-card__image" src={imgSrc} alt="blog" />
-        </a>
-        <div className="p-card__inner">
-          <p
-            className="p-heading--4 "
-            style={{
-              minHeight: "95px",
-            }}
-          >
-            <a href={blogUrl} target={"_blank"} rel="noreferrer">
-              {title}
-            </a>
-          </p>
-          <em>
-            By{" "}
-            <a href={authorUrl} target={"_blank"} rel="noreferrer">
-              {author}
-            </a>{" "}
-            on {formatDate(date).day} {formatDate(date).month}{" "}
-            {formatDate(date).year}
-          </em>
+        <div className="p-card__content">
+          <a href={blogUrl} target={"_blank"} rel="noreferrer">
+            <img className="p-card__image" src={imgSrc} alt="blog" />
+          </a>
+          <div className="p-card__inner">
+            <p
+              className="p-heading--4 "
+              style={{
+                minHeight: "95px",
+              }}
+            >
+              <a href={blogUrl} target={"_blank"} rel="noreferrer">
+                {title}
+              </a>
+            </p>
+            <em>
+              By{" "}
+              <a href={authorUrl} target={"_blank"} rel="noreferrer">
+                {author}
+              </a>{" "}
+              on {formatDate(date).day} {formatDate(date).month}{" "}
+              {formatDate(date).year}
+            </em>
+          </div>
         </div>
-        <p
-          className=""
-          style={{ borderTop: "1px dotted #d9d9d9", paddingTop: "1em" }}
-        >
-          {footerText}
-        </p>
+        <footer>
+          <p style={{ borderTop: "1px dotted #d9d9d9", paddingTop: "1em" }}>
+            {footerText}
+          </p>
+        </footer>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default BlogCard;

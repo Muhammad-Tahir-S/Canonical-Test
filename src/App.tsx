@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Card from "./components/BlogCard";
+import BlogCard from "./components/BlogCard";
 
 const App = (): JSX.Element => {
   const [data, setData] = useState<any>([]);
@@ -32,7 +32,7 @@ const App = (): JSX.Element => {
     <div className="row" style={{ marginTop: "10%" }}>
       {data?.map((blog: any) => {
         return (
-          <Card
+          <BlogCard
             key={blog.id}
             headerText="CLOUD AND SERVER"
             title={blog.title.rendered}
