@@ -1,7 +1,7 @@
 import React from "react";
 import { formatDate } from "../../utils/date";
 
-export interface IBlogCard {
+interface IBlogCard {
   headerText: string;
   imgSrc: string;
   title: string;
