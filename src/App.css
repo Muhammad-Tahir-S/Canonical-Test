@@ -1,3 +1,9 @@
 body {
   font-family: "Ubuntu";
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}

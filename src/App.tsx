@@ -1,44 +1,54 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Circles } from "react-loader-spinner";
 import BlogCard from "./components/BlogCard";
+import { IBlog } from "./types/blog";
 
 const App = (): JSX.Element => {
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<IBlog[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const HEADER_TEXT = "CLOUD AND SERVER";
+  const FOOTER_TEXT = "Article";
 
   const url =
     "https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json";
 
-  useEffect(() => {
+  const fetchData = async () => {
     setLoading(true);
-    axios
+    await axios
       .get(url)
       .then((resp) => {
         setData(resp.data);
       })
       .catch((error) => {
-        console.log("error", error);
+        setError(error.response?.data);
       })
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
-  console.log("data", data);
-
   return loading ? (
-    <h2 className="u-align--center" style={{ width: "100%", marginTop: "20%" }}>
-      Loading...
-    </h2>
+    <div className="spinner">
+      <Circles color="purple" height={80} width={80} />
+    </div>
+  ) : error ? (
+    <div>{error}</div>
   ) : (
     <div className="row" style={{ marginTop: "10%" }}>
-      {data?.map((blog: any) => {
+      {data?.map((blog: IBlog) => {
         return (
           <BlogCard
             key={blog.id}
-            headerText="CLOUD AND SERVER"
+            headerText={HEADER_TEXT}
             title={blog.title.rendered}
             author={blog._embedded.author[0].name}
             blogUrl={blog.link}
-            footerText="Article"
+            footerText={FOOTER_TEXT}
             imgSrc={blog.featured_media}
             authorUrl={blog._embedded.author[0].link}
             date={blog.date}
