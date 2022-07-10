@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Canonical-Test/static/css/main.36419fe8.css",
-    "main.js": "/Canonical-Test/static/js/main.627ce5db.js",
+    "main.css": "/Canonical-Test/static/css/main.a9f6e44e.css",
+    "main.js": "/Canonical-Test/static/js/main.af7366c6.js",
     "index.html": "/Canonical-Test/index.html",
-    "main.36419fe8.css.map": "/Canonical-Test/static/css/main.36419fe8.css.map",
-    "main.627ce5db.js.map": "/Canonical-Test/static/js/main.627ce5db.js.map"
+    "main.a9f6e44e.css.map": "/Canonical-Test/static/css/main.a9f6e44e.css.map",
+    "main.af7366c6.js.map": "/Canonical-Test/static/js/main.af7366c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.36419fe8.css",
-    "static/js/main.627ce5db.js"
+    "static/css/main.a9f6e44e.css",
+    "static/js/main.af7366c6.js"
   ]
 }
