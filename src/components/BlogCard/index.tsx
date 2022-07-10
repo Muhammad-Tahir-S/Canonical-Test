@@ -35,7 +35,7 @@ const BlogCard = ({
           <h3
             className="p-heading--4 "
             style={{
-              height: "95px",
+              marginBottom: "25px",
             }}
           >
             <a href={blogUrl} target={"_blank"} rel="noreferrer">
