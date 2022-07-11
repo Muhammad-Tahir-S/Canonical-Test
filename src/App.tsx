@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Circles } from "react-loader-spinner";
 import BlogCard from "./components/BlogCard";
 import { IBlog } from "./types/blog";
 
