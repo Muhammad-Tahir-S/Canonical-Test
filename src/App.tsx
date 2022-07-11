@@ -34,7 +34,7 @@ const App = (): JSX.Element => {
 
   return loading ? (
     <div className="spinner">
-      <Circles color="purple" height={80} width={80} />
+      <i className="p-icon--spinner u-animation--spin"></i>
     </div>
   ) : error ? (
     <div>{error}</div>
